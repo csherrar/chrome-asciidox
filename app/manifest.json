@@ -1,0 +1,120 @@
+{
+  "name":"Asciidoc Live Preview",
+  "version":"1.5.5.101",
+  "manifest_version":2,
+
+  "description":"Render AsciiDoc (.ad, .adoc, .asc, .asciidoc) as HTML inside Chrome!",
+
+  "options_page":"html/options.html",
+
+  "options_ui":{
+    "page":"html/options.html"
+  },
+
+  "icons":{
+    "16":"img/asciidoc_icon_16.png",
+    "48":"img/asciidoc_icon_48.png",
+    "128":"img/asciidoc_icon_128.png"
+  },
+
+  "content_scripts":[
+    {
+      "matches":[
+        "*://*/*.ad",
+        "*://*/*.ad?*",
+        "*://*/*.ad.*",
+        "*://*/*.adoc",
+        "*://*/*.adoc?*",
+        "*://*/*.adoc.*",
+        "*://*/*.asc",
+        "*://*/*.asc?*",
+        "*://*/*.asc.*",
+        "*://*/*.asciidoc",
+        "*://*/*.asciidoc?*",
+        "*://*/*.asciidoc.*",
+        "*://*/*.txt",
+        "*://*/*.txt?*",
+        "*://*/*.txt.*",
+        "file://*/*.ad",
+        "file://*/*.ad?*",
+        "file://*/*.ad.*",
+        "file://*/*.adoc",
+        "file://*/*.adoc?*",
+        "file://*/*.adoc.*",
+        "file://*/*.asc",
+        "file://*/*.asc?*",
+        "file://*/*.asc.*",
+        "file://*/*.asciidoc",
+        "file://*/*.asciidoc?*",
+        "file://*/*.asciidoc.*",
+        "file://*/*.txt",
+        "file://*/*.txt?*",
+        "file://*/*.txt.*"
+      ],
+      "js":[
+        "js/vendor/highlight.min.js",
+        "js/vendor/jquery.min.js",
+        "js/vendor/asciidoctor.js",
+        "js/vendor/md5.js",
+        "js/asciidocify.js",
+        "js/renderer.js",
+        "js/vendor/chartist.min.js",
+        "js/vendor/asciidoctor-chart-block-macro.js",
+        "js/vendor/asciidoctor-emoji-inline-macro.js"
+      ]
+    }
+  ],
+  "web_accessible_resources":[
+    "css/themes/asciidoctor.css",
+    "css/themes/colony.css",
+    "css/themes/foundation.css",
+    "css/themes/foundation-lime.css",
+    "css/themes/foundation-potion.css",
+    "css/themes/github.css",
+    "css/themes/golo.css",
+    "css/themes/iconic.css",
+    "css/themes/maker.css",
+    "css/themes/readthedocs.css",
+    "css/themes/riak.css",
+    "css/themes/rocket-panda.css",
+    "css/themes/rubygems.css",
+    "css/highlight/github.css",
+    "css/font-awesome.min.css",
+    "css/twemoji-awesome.css",
+    "css/chartist.min.css",
+    "img/themes/riak/*.png",
+    "js/vendor/highlight.min.js",
+    "js/vendor/asciidoctor-chart-block-macro.js",
+    "js/vendor/asciidoctor-emoji-inline-macro.js",
+    "fonts/fontawesome-webfont.woff2",
+    "vendor/MathJax/*"
+  ],
+  "permissions":[
+    "storage",
+    "tabs",
+    "activeTab",
+    "*://*/*.ad",
+    "*://*/*.ad?*",
+    "*://*/*.ad.*",
+    "*://*/*.adoc",
+    "*://*/*.adoc?*",
+    "*://*/*.adoc.*",
+    "*://*/*.asc",
+    "*://*/*.asc?*",
+    "*://*/*.asc.*",
+    "*://*/*.asciidoc",
+    "*://*/*.asciidoc?*",
+    "*://*/*.asciidoc.*",
+    "*://*/*.txt",
+    "*://*/*.txt?*",
+    "*://*/*.txt.*",
+    "contextMenus"
+  ],
+  "browser_action":{
+    "default_title":"Asciidoctor.js Preview"
+  },
+  "background":{
+    "scripts": ["js/background.js"],
+    "persistent": false
+  }
+}

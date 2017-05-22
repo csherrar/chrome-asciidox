@@ -1,27 +1,21 @@
 = Asciidoctor Chrome Extension
 
-Guillaume Grossetie
-:sources: https://github.com/asciidoctor/asciidoctor-chrome-extension
-:license: https://github.com/asciidoctor/asciidoctor-chrome-extension/blob/master/LICENSE
-:webstore: https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia
-:manual-placement: http://asciidoctor.org/docs/user-manual/#manual-placement
-
-This project uses https://github.com/asciidoctor/asciidoctor.js[Asciidoctor.js] to preview AsciiDoc as HTML inside the Chrome (or Chromium) web browser!
-
-image::https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png[link="{webstore}"]
-
-*Project health:* image:https://travis-ci.org/asciidoctor/asciidoctor-chrome-extension.svg?branch=master[Build Status, link="https://travis-ci.org/asciidoctor/asciidoctor-chrome-extension"]
-
 == Experimental Fork
 
 
-A fork of https://github.com/asciidoctor/asciidoctor-chrome-extension that live previews asciidoc in chrome/chromium but also allows you switch between attributes.adoc files, so you can see how your module will look when published. 
+Extends  https://github.com/asciidoctor/asciidoctor-chrome-extension to allow you switch between attributes.adoc files, so you can see how your module will look when published. 
 
 Currently, the attributes.adoc files are hard-coded into the extension, but could be user defined. 
 
+No Attributes file selected:
+
 image:./none.png[none]
 
+Hosted Attributes file selected:
+
 image:./hosted.png[hosted]
+
+Version 4.4. Attributes file selected:
 
 image:./selfmanaged.png[selfmanaged]
 
@@ -173,3 +167,16 @@ Copyright (C) 2013 Guillaume Grossetie.
 Free use of this software is granted under the terms of the MIT License.
 
 See the {license}[LICENSE] file for details.
+
+
+Guillaume Grossetie
+:sources: https://github.com/asciidoctor/asciidoctor-chrome-extension
+:license: https://github.com/asciidoctor/asciidoctor-chrome-extension/blob/master/LICENSE
+:webstore: https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia
+:manual-placement: http://asciidoctor.org/docs/user-manual/#manual-placement
+
+This project uses https://github.com/asciidoctor/asciidoctor.js[Asciidoctor.js] to preview AsciiDoc as HTML inside the Chrome (or Chromium) web browser!
+
+image::https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png[link="{webstore}"]
+
+*Project health:* image:https://travis-ci.org/asciidoctor/asciidoctor-chrome-extension.svg?branch=master[Build Status, link="https://travis-ci.org/asciidoctor/asciidoctor-chrome-extension"]

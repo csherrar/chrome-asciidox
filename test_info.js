@@ -35,12 +35,12 @@ function loadAttr_choice() {
   var attr_choice =
     '+++'+
     '<form action="?" method="get">'+
-    '<p><select name="attr">'+
+    '<p><select name="attr" onchange="this.form.submit()">'+
     '  <option value="">None</option>'+
     '  <option value="3">Hosted</option>'+
     '  <option value="44">4.4</option>'+
     '</select>'+
-    '<p>  <input type="submit" value="Submit">'+
+    '<p>'+
     '</form> '+
     '+++'
   ;

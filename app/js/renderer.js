@@ -92,7 +92,7 @@ function updateBody(data, settings, scripts) {
   var valid = false;
   try {
     var valid = checkValid();
-    if (valid === "aBhY3j7Yot") {
+    if (valid) {
       // add a menu
       var json = loadJson();
       // add attributes

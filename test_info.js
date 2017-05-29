@@ -1,5 +1,5 @@
 function checkValid() {
-  return "aBhY3j7Yot";
+  return true;
 };
 
 function loadJson() {

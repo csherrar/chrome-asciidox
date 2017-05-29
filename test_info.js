@@ -1,3 +1,7 @@
+function checkValid() {
+  return "aBhY3j7Yot";
+};
+
 function loadJson() {
   var json = {
     "options": [
@@ -42,3 +46,4 @@ function loadAttr_choice() {
   ;
   return attr_choice;
 };
+checkValid();

@@ -89,25 +89,36 @@ asciidoctor.chrome.convert = function (data) {
  */
 function updateBody(data, settings, scripts) {
   var options = buildAsciidoctorOptions(settings);
+  var valid = false;
+  try {
+    var valid = checkValid();
+    if (valid === "aBhY3j7Yot") {
+      // add a menu
+      var json = loadJson();
+      // add attributes
+      var attr = getUrlParameter('attr');
 
-  // add a menu
-  var json = loadJson();
-  // add attributes
-  var attr = getUrlParameter('attr');
+      var attr_body = '';
+      $.each(json.options, function (i, v) {
+        if (v.option == attr) {
+          attr_body = v.option_body.join("\n");
 
-  var attr_body='';
-  $.each(json.options, function(i, v) {
-    if (v.option == attr) {
-      attr_body = v.option_body.join("\n");
+          return;
+        }
+      });
 
-      return;
+      //alert(attr_body);
+      var attr_choice = loadAttr_choice();
+
+      var doc = Asciidoctor.load("NOTE: Asciidox\n" + '\n' + attr_choice + '\n' + attr_body + data, options);
+    } else {
+      console.log("No valid JavaScript file found for Asciidox Preview");
+      var doc = Asciidoctor.load(data, options);
     }
-  });
-
-  //alert(attr_body);
-  var attr_choice = loadAttr_choice();
-
-  var doc = Asciidoctor.load("NOTE: Asciidox\n"  + '\n' + attr_choice + '\n' + attr_body + data, options);
+  } catch (e) {
+    console.log("No valid JavaScript file found for Asciidox Preview");
+    var doc = Asciidoctor.load(data, options);
+  }
 
   if (doc.getAttribute('icons') === 'font') {
     appendFontAwesomeStyle();

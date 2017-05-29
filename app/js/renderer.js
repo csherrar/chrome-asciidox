@@ -89,61 +89,23 @@ asciidoctor.chrome.convert = function (data) {
  */
 function updateBody(data, settings, scripts) {
   var options = buildAsciidoctorOptions(settings);
-  
-// add a menu
-var json = {
-  "options": [
-    {
-      "option": "3",
-      "option_body": [
-        "",
-        ":ProductName: Red Hat Mobile Application Platform Hosted",
-        ":ProductShortName: RHMAP",
-        ":ProductRelease: 3",
-        ":ProductVersion: 3.16",
-        ""
-      ]
-    },
-    {
-      "option": "44",
-      "option_body": [
-        "",
-        ":ProductName: Red Hat Mobile Application Platform",
-        ":ProductShortName: RHMAP",
-        ":ProductRelease: 4.4",
-        ":ProductVersion: 4.4",
-        ""
-      ]
-    }
-  ]
-};
 
-var attr = getUrlParameter('attr');
+  // add a menu
+  var json = loadJson();
+  // add attributes
+  var attr = getUrlParameter('attr');
 
-var attr_body='';
-$.each(json.options, function(i, v) {
+  var attr_body='';
+  $.each(json.options, function(i, v) {
     if (v.option == attr) {
-        attr_body = v.option_body.join("\n");
-        
-        return;
+      attr_body = v.option_body.join("\n");
+
+      return;
     }
-});
+  });
 
-//alert(attr_body);
-var attr_choice = 
-
-'+++'+
-'<form action="?" method="get">'+
-'<p><select name="attr">'+
-'  <option value="">None</option>'+
-'  <option value="3">Hosted</option>'+
-'  <option value="44">4.4</option>'+
-'</select>'+
-'<p>  <input type="submit" value="Submit">'+
-'</form> '+
-'+++'
-  ;
-
+  //alert(attr_body);
+  var attr_choice = loadAttr_choice();
 
   var doc = Asciidoctor.load("NOTE: Asciidox\n"  + '\n' + attr_choice + '\n' + attr_body + data, options);
 
